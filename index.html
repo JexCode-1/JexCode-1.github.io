@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jessica Web Studio | Web Designer & Developer</title>
+
+  <meta name="description" content="Jessica Web Studio creates clean, modern and responsive websites for businesses, brands and personal projects.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #09090d;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #24242c;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #c9a7ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      color: #b8b8c2;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid #363642;
+      padding: 8px 14px;
+      border-radius: 30px;
+      color: #c9a7ff;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #c9a7ff;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: #aaaab5;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: #c9a7ff;
+      color: #111111;
+    }
+
+    .primary:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    .secondary {
+      border: 1px solid #383842;
+      color: #ffffff;
+    }
+
+    .secondary:hover {
+      background: #19191f;
+    }
+
+    /* HERO CARD */
+
+    .hero-card {
+      min-height: 400px;
+      border: 1px solid #292934;
+      border-radius: 25px;
+      background: linear-gradient(145deg, #201a2b, #111116);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .hero-card h2 {
+      font-size: 45px;
+      line-height: 1.1;
+    }
+
+    .hero-card p {
+      color: #aaaab5;
+      margin-top: 15px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 0;
+      border-top: 1px solid #24242c;
+    }
+
+    .section-title {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .section-description {
+      color: #a7a7b1;
+      margin-bottom: 40px;
+    }
+
+    /* SERVICES */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #141419;
+      border: 1px solid #292934;
+      border-radius: 18px;
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #514767;
+    }
+
+    .card-number {
+      color: #c9a7ff;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #a7a7b1;
+    }
+
+    /* PROJECTS */
+
+    .project {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: linear-gradient(145deg, #25202e, #111116);
+    }
+
+    .project-tag {
+      color: #c9a7ff;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .project h3 {
+      font-size: 25px;
+    }
+
+    /* PRICING */
+
+    .price {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 18px 0;
+    }
+
+    .price small {
+      font-size: 13px;
+      color: #888893;
+      font-weight: normal;
+    }
+
+    .price-list {
+      list-style: none;
+      color: #aaaab5;
+      margin-bottom: 25px;
+    }
+
+    .price-list li {
+      margin-bottom: 8px;
+    }
+
+    .price-list li::before {
+      content: "✓ ";
+      color: #c9a7ff;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about p {
+      color: #aaaab5;
+      margin-bottom: 15px;
+    }
+
+    .about-box {
+      background: #141419;
+      border: 1px solid #292934;
+      padding: 35px;
+      border-radius: 20px;
+    }
+
+    .about-box h3 {
+      margin-bottom: 15px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact h2 {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: #aaaab5;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #24242c;
+      padding: 30px 0;
+      color: #777783;
+      font-size: 14px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 0;
+      }
+
+      .hero-card {
+        min-height: 300px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .contact h2 {
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <div class="container">
+    <nav>
+
+      <div class="logo">
+        Jessica<span>Web</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </nav>
+  </div>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <div class="container">
+
+      <section class="hero">
+
+        <div>
+
+          <span class="badge">
+            Web Designer & Developer
+          </span>
+
+          <h1>
+            I create websites that make your
+            <span>brand stand out.</span>
+          </h1>
+
+          <p>
+            I design clean, modern and responsive websites
+            for small businesses, personal brands, creators
+            and growing businesses.
+          </p>
+
+          <div class="buttons">
+
+            <a href="#work" class="btn primary">
+              View My Work
+            </a>
+
+            <a href="#contact" class="btn secondary">
+              Contact Me
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+          <div>
+
+            <h2>
+              YOUR<br>
+              BRAND<br>
+              ONLINE.
+            </h2>
+
+            <p>
+              Design • Development • Creativity
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          What I do
+        </h2>
+
+        <p class="section-description">
+          Simple web solutions designed around your brand.
+        </p>
+
+
+        <div class="cards">
+
+          <div class="card">
+
+            <div class="card-number">
+              01
+            </div>
+
+            <h3>
+              Website Design
+            </h3>
+
+            <p>
+              Clean and modern website designs that
+              represent your brand professionally.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-number">
+              02
+            </div>
+
+            <h3>
+              Website Development
+            </h3>
+
+            <p>
+              Responsive websites that work smoothly
+              across phones, tablets and computers.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-number">
+              03
+            </div>
+
+            <h3>
+              Landing Pages
+            </h3>
+
+            <p>
+              Focused landing pages for businesses,
+              products, services and personal brands.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="work">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          Selected Work
+        </h2>
+
+        <p class="section-description">
+          Some website concepts created to demonstrate
+          different styles and industries.
+        </p>
+
+
+        <div class="cards">
+
+
+          <div class="card project">
+
+            <div class="project-tag">
+              BEAUTY / LIFESTYLE
+            </div>
+
+            <h3>
+              Élan Tattoo Studio
+            </h3>
+
+            <p>
+              A modern tattoo studio website concept
+              with services, branding and booking sections.
+            </p>
+
+          </div>
+
+
+          <div class="card project">
+
+            <div class="project-tag">
+              FASHION
+            </div>
+
+            <h3>
+              Jaycee Closet
+            </h3>
+
+            <p>
+              A stylish fashion brand website concept
+              for clothing and streetwear.
+            </p>
+
+          </div>
+
+
+          <div class="card project">
+
+            <div class="project-tag">
+              BUSINESS
+            </div>
+
+            <h3>
+              Local Business
+            </h3>
+
+            <p>
+              A professional business website concept
+              designed to help customers find and contact
+              a company online.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRICING -->
+
+    <section>
+
+      <div class="container">
+
+        <h2 class="section-title">
+          My Services
+        </h2>
+
+        <p class="section-description">
+          Starter prices for small businesses and personal brands.
+        </p>
+
+
+        <div class="cards">
+
+
+          <div class="card">
+
+            <h3>
+              Landing Page
+            </h3>
+
+            <div class="price">
+              ₦25,000
+              <small>+</small>
+            </div>
+
+            <ul class="price-list">
+
+              <li>One-page website</li>
+              <li>Mobile responsive</li>
+              <li>Modern design</li>
+              <li>Contact section</li>
+
+            </ul>
+
+            <a href="#contact" class="btn primary">
+              Get Started
+            </a>
+
+          </div>
+
+
+          <div class="card">
+
+            <h3>
+              Business Website
+            </h3>
+
+            <div class="price">
+              ₦50,000
+              <small>+</small>
+            </div>
+
+            <ul class="price-list">
+
+              <li>Professional design</li>
+              <li>Multiple sections</li>
+              <li>Mobile responsive</li>
+              <li>Contact information</li>
+
+            </ul>
+
+            <a href="#contact" class="btn primary">
+              Get Started
+            </a>
+
+          </div>
+
+
+          <div class="card">
+
+            <h3>
+              Custom Website
+            </h3>
+
+            <div class="price">
+              Let's Talk
+            </div>
+
+            <ul class="price-list">
+
+              <li>Custom design</li>
+              <li>More pages</li>
+              <li>Special features</li>
+              <li>Built around your needs</li>
+
+            </ul>
+
+            <a href="#contact" class="btn primary">
+              Contact Me
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="about">
+
+
+          <div>
+
+            <h2 class="section-title">
+              About Me
+            </h2>
+
+            <p>
+              I'm Jessica, a beginner web designer and developer
+              passionate about creating websites that are simple,
+              attractive and easy to use.
+            </p>
+
+            <p>
+              I work with businesses, creators and personal brands
+              that want a professional presence online.
+            </p>
+
+            <p>
+              Every project is designed with the client's brand,
+              audience and goals in mind.
+            </p>
+
+          </div>
+
+
+          <div class="about-box">
+
+            <h3>
+              What you can expect
+            </h3>
+
+            <p>
+              ✓ Clean design
+            </p>
+
+            <p>
+              ✓ Mobile-friendly layout
+            </p>
+
+            <p>
+              ✓ Clear communication
+            </p>
+
+            <p>
+              ✓ Attention to detail
+            </p>
+
+            <p>
+              ✓ Website built around your brand
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact">
+
+          <h2>
+            Let's build something.
+          </h2>
+
+          <p>
+            Have a business, brand or idea that needs
+            a website? I'd love to hear about it.
+          </p>
+
+          <div class="buttons" style="justify-content:center;">
+
+            <!-- CHANGE THIS NUMBER TO YOUR REAL WHATSAPP NUMBER -->
+
+            <a
+              href="https://wa.me/2348120808656"
+              class="btn primary"
+              target="_blank"
+            >
+              WhatsApp Me
+            </a>
+
+
+            <!-- CHANGE THIS EMAIL TO YOUR REAL EMAIL -->
+
+            <a
+              href="mailto: tegaofuafo7@gmail.com"
+              class="btn secondary"
+            >
+              Email Me
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <p>
+          © 2026 Jessica Web Studio
+        </p>
+
+        <p>
+          Web Design • Development • Creativity
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
